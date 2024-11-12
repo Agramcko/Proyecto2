@@ -236,8 +236,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="Reyimg" min="-2" pref="377" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                      <Component id="Reyimg" min="-2" pref="411" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="herencia" pref="216" max="32767" attributes="0"/>
                           <Component id="arbol" max="32767" attributes="0"/>
@@ -254,13 +254,18 @@
                       <Component id="herencia" min="-2" pref="149" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="arbol" min="-2" pref="146" max="-2" attributes="0"/>
-                      <EmptySpace pref="48" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="Reyimg">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\gramc\Downloads\rey2.jpg"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="arbol">
             </Component>

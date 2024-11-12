@@ -161,25 +161,27 @@ public class Interfaz extends javax.swing.JFrame {
         barramenuLayout.setVerticalGroup(
             barramenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(serbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(inicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
+            .addComponent(inicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barramenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(genealogico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(5, 5, 5))
-            .addComponent(btnsalida, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
+            .addComponent(btnsalida, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
         );
 
         fondo.setBackground(new java.awt.Color(255, 255, 255));
 
         azul1.setBackground(new java.awt.Color(255, 255, 255));
 
+        Reyimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\gramc\\Downloads\\rey2.jpg")); // NOI18N
+
         javax.swing.GroupLayout azul1Layout = new javax.swing.GroupLayout(azul1);
         azul1.setLayout(azul1Layout);
         azul1Layout.setHorizontalGroup(
             azul1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(azul1Layout.createSequentialGroup()
-                .addComponent(Reyimg, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104)
+                .addComponent(Reyimg, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
                 .addGroup(azul1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(herencia, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                     .addComponent(arbol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -193,7 +195,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(herencia, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addComponent(arbol, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         azul2.setBackground(new java.awt.Color(51, 153, 255));
