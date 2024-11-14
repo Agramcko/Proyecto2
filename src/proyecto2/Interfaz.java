@@ -22,11 +22,11 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz() {
         initComponents();
         inicio.setBackground(Color.white);
-        azul2.setVisible(false); //Para que no se vea los botones del panel de atras
+        azul2.setVisible(false);  //Para que no se vea los botones del panel de atras
         
         this.setLocationRelativeTo(this);
         
-        this.pintarImagen(this.Reyimg, "src/Img/rey.jpg");
+        this.pintarImagen(this.Reyimg, "src/Img/rey.jpg");          //Para agregar las imagenes de la interfaz
         this.pintarImagen(this.herencia, "src/Img/herencia.gif");
         this.pintarImagen(this.arbol, "src/Img/arbol-de-familia.gif");
         
@@ -337,7 +337,7 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void inicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioMouseClicked
-        azul1.setVisible(true);
+        azul1.setVisible(true);   //Para que se muestre el panel que selecciones
         azul2.setVisible(false);
         inicio.setBackground(Color.white);
         serbtn.setBackground(new Color(204,204,204));
@@ -345,7 +345,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_inicioMouseClicked
 
     private void serbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serbtnMouseClicked
-        azul2.setVisible(true);
+        azul2.setVisible(true);   //Para que se muestre el panel que selecciones
         azul1.setVisible(false);
         serbtn.setBackground(Color.white);
         inicio.setBackground(new Color(204,204,204));
