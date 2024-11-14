@@ -198,7 +198,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        azul2.setBackground(new java.awt.Color(51, 153, 255));
+        azul2.setBackground(new java.awt.Color(255, 255, 255));
 
         CargarTree.setBackground(new java.awt.Color(51, 51, 51));
         CargarTree.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
