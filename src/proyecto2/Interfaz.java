@@ -161,12 +161,12 @@ public class Interfaz extends javax.swing.JFrame {
         barramenuLayout.setVerticalGroup(
             barramenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(serbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(inicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
+            .addComponent(inicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barramenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(genealogico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(5, 5, 5))
-            .addComponent(btnsalida, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
+            .addComponent(btnsalida, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
         );
 
         fondo.setBackground(new java.awt.Color(255, 255, 255));
@@ -280,11 +280,11 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(BuscarNom, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CargarTree, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(VerRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(216, 216, 216)
+                .addGap(96, 96, 96)
                 .addGroup(azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(MostrarAntep)
                     .addComponent(BuscarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(422, Short.MAX_VALUE))
         );
         azul2Layout.setVerticalGroup(
             azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,13 +293,13 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CargarTree, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(MostrarAntep, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VerRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BuscarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(85, 85, 85)
+                .addGap(45, 45, 45)
                 .addComponent(BuscarNom, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout fondoLayout = new javax.swing.GroupLayout(fondo);

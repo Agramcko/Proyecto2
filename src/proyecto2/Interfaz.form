@@ -290,12 +290,12 @@
                           <Component id="CargarTree" min="-2" pref="110" max="-2" attributes="0"/>
                           <Component id="VerRegistro" min="-2" pref="110" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="MostrarAntep" min="-2" max="-2" attributes="0"/>
                           <Component id="BuscarTitulo" min="-2" pref="115" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="302" max="32767" attributes="0"/>
+                      <EmptySpace pref="422" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -307,14 +307,14 @@
                           <Component id="CargarTree" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="MostrarAntep" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="86" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="VerRegistro" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="BuscarTitulo" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Component id="BuscarNom" min="-2" pref="48" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                      <EmptySpace pref="169" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
