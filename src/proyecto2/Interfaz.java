@@ -22,7 +22,8 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz() {
         initComponents();
         inicio.setBackground(Color.white);
-        azul2.setVisible(false);
+        azul2.setVisible(false); //Para que no se vea los botones del panel de atras
+        
         this.setLocationRelativeTo(this);
         
         this.pintarImagen(this.Reyimg, "src/Img/rey.jpg");
