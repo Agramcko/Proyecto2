@@ -165,7 +165,7 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(inicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barramenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(genealogico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(genealogico, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                 .addGap(5, 5, 5))
             .addComponent(btnsalida, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
         );
@@ -173,8 +173,6 @@ public class Interfaz extends javax.swing.JFrame {
         fondo.setBackground(new java.awt.Color(255, 255, 255));
 
         azul1.setBackground(new java.awt.Color(255, 255, 255));
-
-        Reyimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\gramc\\Downloads\\rey2.jpg")); // NOI18N
 
         javax.swing.GroupLayout azul1Layout = new javax.swing.GroupLayout(azul1);
         azul1.setLayout(azul1Layout);
@@ -211,6 +209,11 @@ public class Interfaz extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 CargarTreeMouseExited(evt);
+            }
+        });
+        CargarTree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CargarTreeActionPerformed(evt);
             }
         });
 
@@ -419,6 +422,10 @@ public class Interfaz extends javax.swing.JFrame {
         BuscarTitulo.setBackground(new Color(51, 51, 51));
         BuscarTitulo.setForeground(Color.white);
     }//GEN-LAST:event_BuscarTituloMouseExited
+
+    private void CargarTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTreeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CargarTreeActionPerformed
 
     /**
      * @param args the command line arguments
