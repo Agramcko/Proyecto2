@@ -5,36 +5,36 @@
 package Body;
 
 class Lista {
+
     public NodoHT head;
     public String index;
 
-
-    public Lista () {
+    public Lista() {
         head = null;
         index = "";
     }
-    
-    public Lista (boolean nueva_sucursal,String new_index) {
+
+    public Lista(boolean nueva_sucursal, String new_index) {
         head = null;
         index = new_index;
 
     }
-    
+
     public NodoHT crear(String key, Nodo pointerArbol) {
-        NodoHT nodo = new NodoHT(key, key,null,pointerArbol);
+        NodoHT nodo = new NodoHT(key, key, null, pointerArbol);
         return nodo;
     }
-    
-    public NodoHT insertar(String key, Nodo pointerArbol){
-        NodoHT nodo = crear(key,pointerArbol);
-        if (head==null) {
+
+    public NodoHT insertar(String key, Nodo pointerArbol) {
+        NodoHT nodo = crear(key, pointerArbol);
+        if (head == null) {
             head = nodo;
-        } 
-        
-        else {
+        } else {
             NodoHT pointer = head;
-            while(pointer.next != null) pointer = pointer.next;
-            pointer.next=nodo;
+            while (pointer.next != null) {
+                pointer = pointer.next;
+            }
+            pointer.next = nodo;
         }
         return nodo;
     }

@@ -1,7 +1,7 @@
 package Body;
 
-
 public class Nodo {
+
     private String element;
     private int key;
     private Nodo[] sons;
@@ -86,7 +86,6 @@ public class Nodo {
     public void setM(Nodo m) {
         this.m = m;
     }
- 
 
     public Nodo(String element, int key) {
         this.element = element;
@@ -117,8 +116,5 @@ public class Nodo {
     public void setSons(Nodo[] sons) {
         this.sons = sons;
     }
-    
-    
-    
-    
+
 }
