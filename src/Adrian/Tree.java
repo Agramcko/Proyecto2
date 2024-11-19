@@ -71,7 +71,7 @@ public class Tree {
         } 
         else {
             for (Nodo son : root.getSons()) {
-                ht.insert((String) son.getElement(), son);
+                ht.insertar((String) son.getElement(), son);
                 ht = saveHashTable(son, ht);
             }
         }

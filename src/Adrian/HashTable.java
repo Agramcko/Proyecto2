@@ -18,25 +18,26 @@ public class HashTable {
         }
        
     }
-    public static int hashFunc(String c) {
-        int hash = c.hashCode()%hashTableSize;
-        if(hash<0) hash = hash*-1;
-        return hash;
-    }
+
     
     
-    public void insert(String key, Nodo pointerArbol){
-        int index = hashFunc(key);
+    public void insertar(String key, Nodo pointerArbol){
+        int index = hashFunction(key);
         hashTable[index].insertar(key,pointerArbol);
     }
     
-    
-    public void show(){
+    public static int hashFunction(String string) {
+        int hashResponse = string.hashCode()%hashTableSize;
+        if(hashResponse<0) hashResponse = -hashResponse;
+        return hashResponse;
+    }
+        
+    public void mostrarHashTable(){
         for (int i = 0; i < hashTableSize; i++) {
-            System.out.println("----INDICE: "+i+"------");
+            System.out.println(i);
             NodoHT aux = hashTable[i].head;
             while(aux!= null){
-                System.out.println("CLAVE: " + aux.key+" VALOR: "+aux.val+" ");
+                System.out.println("val: "+aux.val);
                 aux = aux.next;
             }
             System.out.println();
@@ -44,7 +45,7 @@ public class HashTable {
     }
     
     public NodoHT accederAlHashTable(String key){
-        int index = hashFunc(key);
+        int index = hashFunction(key);
 
         NodoHT aux = hashTable[index].head;
         while(aux!= null & aux.key!=key)aux = aux.next;

@@ -34,8 +34,8 @@ public class Main {
         /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
         HashTable ht = new HashTable();
         ht = tree.saveHashTable(tree.getRoot(), ht);
-        ht.insert((String)tree.getRoot().getElement(), tree.getRoot());
-        ht.show();
+        ht.insertar((String)tree.getRoot().getElement(), tree.getRoot());
+        ht.mostrarHashTable();
         
         /*PUNTO 3.A*/
         String []usuariosEncontrados = ht.buscarPorNombre("22");
