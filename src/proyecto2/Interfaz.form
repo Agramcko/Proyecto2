@@ -64,13 +64,13 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="serbtn" alignment="1" max="32767" attributes="0"/>
-              <Component id="inicio" alignment="1" pref="41" max="32767" attributes="0"/>
+              <Component id="inicio" alignment="1" pref="48" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="genealogico" pref="30" max="32767" attributes="0"/>
                   <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
               </Group>
-              <Component id="btnsalida" alignment="0" pref="41" max="32767" attributes="0"/>
+              <Component id="btnsalida" alignment="0" pref="48" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -209,23 +209,23 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="azul1" alignment="0" max="32767" attributes="0"/>
+              <Component id="blanco1" alignment="0" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Component id="azul2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="blanco2" alignment="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="azul1" alignment="1" max="32767" attributes="0"/>
+              <Component id="blanco1" alignment="1" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Component id="azul2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="blanco2" alignment="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="azul1">
+        <Container class="javax.swing.JPanel" name="blanco1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -261,6 +261,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="Reyimg">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\gramc\Downloads\rey2.jpg"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="arbol">
             </Component>
@@ -268,7 +273,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="azul2">
+        <Container class="javax.swing.JPanel" name="blanco2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

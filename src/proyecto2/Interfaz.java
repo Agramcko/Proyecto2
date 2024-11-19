@@ -22,7 +22,7 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz() {
         initComponents();
         inicio.setBackground(Color.white);
-        azul2.setVisible(false);  //Para que no se vea los botones del panel de atras
+        blanco2.setVisible(false);  //Para que no se vea los botones del panel de atras
         
         this.setLocationRelativeTo(this);
         
@@ -50,11 +50,11 @@ public class Interfaz extends javax.swing.JFrame {
         btnsalida = new javax.swing.JPanel();
         txtsalida = new javax.swing.JLabel();
         fondo = new javax.swing.JPanel();
-        azul1 = new javax.swing.JPanel();
+        blanco1 = new javax.swing.JPanel();
         Reyimg = new javax.swing.JLabel();
         arbol = new javax.swing.JLabel();
         herencia = new javax.swing.JLabel();
-        azul2 = new javax.swing.JPanel();
+        blanco2 = new javax.swing.JPanel();
         CargarTree = new javax.swing.JButton();
         VerRegistro = new javax.swing.JButton();
         BuscarNom = new javax.swing.JButton();
@@ -162,34 +162,36 @@ public class Interfaz extends javax.swing.JFrame {
         barramenuLayout.setVerticalGroup(
             barramenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(serbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(inicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+            .addComponent(inicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barramenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(genealogico, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                 .addGap(5, 5, 5))
-            .addComponent(btnsalida, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+            .addComponent(btnsalida, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         fondo.setBackground(new java.awt.Color(255, 255, 255));
 
-        azul1.setBackground(new java.awt.Color(255, 255, 255));
+        blanco1.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout azul1Layout = new javax.swing.GroupLayout(azul1);
-        azul1.setLayout(azul1Layout);
-        azul1Layout.setHorizontalGroup(
-            azul1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(azul1Layout.createSequentialGroup()
+        Reyimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\gramc\\Downloads\\rey2.jpg")); // NOI18N
+
+        javax.swing.GroupLayout blanco1Layout = new javax.swing.GroupLayout(blanco1);
+        blanco1.setLayout(blanco1Layout);
+        blanco1Layout.setHorizontalGroup(
+            blanco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(blanco1Layout.createSequentialGroup()
                 .addComponent(Reyimg, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
-                .addGroup(azul1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(blanco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(herencia, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
                     .addComponent(arbol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        azul1Layout.setVerticalGroup(
-            azul1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        blanco1Layout.setVerticalGroup(
+            blanco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Reyimg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(azul1Layout.createSequentialGroup()
+            .addGroup(blanco1Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(herencia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
@@ -197,7 +199,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        azul2.setBackground(new java.awt.Color(255, 255, 255));
+        blanco2.setBackground(new java.awt.Color(255, 255, 255));
 
         CargarTree.setBackground(new java.awt.Color(51, 51, 51));
         CargarTree.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -274,31 +276,31 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout azul2Layout = new javax.swing.GroupLayout(azul2);
-        azul2.setLayout(azul2Layout);
-        azul2Layout.setHorizontalGroup(
-            azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(azul2Layout.createSequentialGroup()
+        javax.swing.GroupLayout blanco2Layout = new javax.swing.GroupLayout(blanco2);
+        blanco2.setLayout(blanco2Layout);
+        blanco2Layout.setHorizontalGroup(
+            blanco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(blanco2Layout.createSequentialGroup()
                 .addGap(92, 92, 92)
-                .addGroup(azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(blanco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BuscarNom, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CargarTree, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(VerRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(96, 96, 96)
-                .addGroup(azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(blanco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(MostrarAntep)
                     .addComponent(BuscarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(422, Short.MAX_VALUE))
         );
-        azul2Layout.setVerticalGroup(
-            azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(azul2Layout.createSequentialGroup()
+        blanco2Layout.setVerticalGroup(
+            blanco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(blanco2Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
-                .addGroup(azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(blanco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CargarTree, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(MostrarAntep, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
-                .addGroup(azul2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(blanco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VerRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BuscarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
@@ -310,15 +312,15 @@ public class Interfaz extends javax.swing.JFrame {
         fondo.setLayout(fondoLayout);
         fondoLayout.setHorizontalGroup(
             fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(azul1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(blanco1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(azul2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(blanco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fondoLayout.setVerticalGroup(
             fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(azul1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(blanco1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(azul2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(blanco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -340,16 +342,16 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void inicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioMouseClicked
-        azul1.setVisible(true);   //Para que se muestre el panel que selecciones
-        azul2.setVisible(false);
+        blanco1.setVisible(true);   //Para que se muestre el panel que selecciones
+        blanco2.setVisible(false);
         inicio.setBackground(Color.white);
         serbtn.setBackground(new Color(204,204,204));
         
     }//GEN-LAST:event_inicioMouseClicked
 
     private void serbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serbtnMouseClicked
-        azul2.setVisible(true);   //Para que se muestre el panel que selecciones
-        azul1.setVisible(false);
+        blanco2.setVisible(true);   //Para que se muestre el panel que selecciones
+        blanco1.setVisible(false);
         serbtn.setBackground(Color.white);
         inicio.setBackground(new Color(204,204,204));
         
@@ -374,7 +376,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarNomActionPerformed
 
     private void CargarTreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CargarTreeMouseEntered
-        CargarTree.setBackground(Color.white);
+        CargarTree.setBackground(new Color(153,204,255));
         CargarTree.setForeground(Color.black);
     }//GEN-LAST:event_CargarTreeMouseEntered
 
@@ -384,7 +386,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_CargarTreeMouseExited
 
     private void VerRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerRegistroMouseEntered
-        VerRegistro.setBackground(Color.white);
+        VerRegistro.setBackground(new Color(153,204,255));
         VerRegistro.setForeground(Color.black);
     }//GEN-LAST:event_VerRegistroMouseEntered
 
@@ -394,7 +396,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_VerRegistroMouseExited
 
     private void BuscarNomMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarNomMouseEntered
-        BuscarNom.setBackground(Color.white);
+        BuscarNom.setBackground(new Color(153,204,255));
         BuscarNom.setForeground(Color.black);
     }//GEN-LAST:event_BuscarNomMouseEntered
 
@@ -404,7 +406,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarNomMouseExited
 
     private void MostrarAntepMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarAntepMouseEntered
-        MostrarAntep.setBackground(Color.white);
+        MostrarAntep.setBackground(new Color(153,204,255));
         MostrarAntep.setForeground(Color.black);
     }//GEN-LAST:event_MostrarAntepMouseEntered
 
@@ -414,7 +416,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarAntepMouseExited
 
     private void BuscarTituloMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarTituloMouseEntered
-        BuscarTitulo.setBackground(Color.white);
+        BuscarTitulo.setBackground(new Color(153,204,255));
         BuscarTitulo.setForeground(Color.black);
     }//GEN-LAST:event_BuscarTituloMouseEntered
 
@@ -483,9 +485,9 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel Reyimg;
     private javax.swing.JButton VerRegistro;
     private javax.swing.JLabel arbol;
-    private javax.swing.JPanel azul1;
-    private javax.swing.JPanel azul2;
     private javax.swing.JPanel barramenu;
+    private javax.swing.JPanel blanco1;
+    private javax.swing.JPanel blanco2;
     private javax.swing.JPanel btnsalida;
     private javax.swing.JPanel fondo;
     private javax.swing.JLabel genealogico;
