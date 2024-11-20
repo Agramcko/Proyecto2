@@ -445,34 +445,45 @@ public class Interfaz extends javax.swing.JFrame {
                 JsonParser parser = new JsonParser();
                 JsonElement element = parser.parse(contenido);
                 JsonObject casas = element.getAsJsonObject();
-                
+
                 //itera en archivocasa del json
                 for (String archivoCasa : casas.keySet()) {
                     System.out.println(archivoCasa);
                     JsonArray miembros = casas.getAsJsonArray(archivoCasa);
-                    
-                    //itera en cada miembro del linaje
+
+                    //itera cada miembro del archivocasa
                     for (JsonElement miembro : miembros) {
                         JsonObject linaje = miembro.getAsJsonObject();
 
+                        //itera en cada miembro del linaje
                         for (String nombreMiembro : linaje.keySet()) {
                             System.out.println(nombreMiembro);
                             JsonArray atributos = linaje.getAsJsonArray(nombreMiembro);
-                            
-                            //itera cada atributos
-                            for (JsonElement miembroAtributo : atributos) {
-                                var Ofhisname = miembroAtributo.getAsJsonObject().get("Of his name");
-                                var bornTo = miembroAtributo.getAsJsonObject().get("Born to");
-                                var knownThroughoutAs = miembroAtributo.getAsJsonObject().get("Known throughout as");
-                                var heldTitle = miembroAtributo.getAsJsonObject().get("Held title");
-                                var wedTo = miembroAtributo.getAsJsonObject().get("Wed to");
-                                var ofEyes = miembroAtributo.getAsJsonObject().get("Of eyes");
-                                var ofhair = miembroAtributo.getAsJsonObject().get("Of hair");
-                                var notes = miembroAtributo.getAsJsonObject().get("Notes");
-                                var fate = miembroAtributo.getAsJsonObject().get("Fate");
-                                System.out.println(miembroAtributo);
-                                
-                                
+
+                            //itera cada atributos y los muestra
+                            for (JsonElement atributo : atributos) {
+                                var Ofhisname = atributo.getAsJsonObject().get("Of his name");
+                                var bornTo = atributo.getAsJsonObject().get("Born to");
+                                var knownThroughoutAs = atributo.getAsJsonObject().get("Known throughout as");
+                                var heldTitle = atributo.getAsJsonObject().get("Held title");
+                                var wedTo = atributo.getAsJsonObject().get("Wed to");
+                                var ofEyes = atributo.getAsJsonObject().get("Of eyes");
+                                var ofhair = atributo.getAsJsonObject().get("Of hair");
+                                var notes = atributo.getAsJsonObject().get("Notes");
+                                var fate = atributo.getAsJsonObject().get("Fate");
+                                System.out.println(atributo);
+
+                                // Verifica si el miembro tiene hijos y los muestra
+                                if (atributo.getAsJsonObject().has("Father to")) {
+                                    JsonArray fatherTo = atributo.getAsJsonObject().get("Father to").getAsJsonArray();
+                                    System.out.println("Father to:");
+                                    for (JsonElement hijo : fatherTo) {
+                                        System.out.println(hijo.getAsString());
+
+                                    }
+
+                                }
+
                             }
                         }
                     }
