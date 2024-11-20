@@ -446,22 +446,22 @@ public class Interfaz extends javax.swing.JFrame {
                 JsonElement element = parser.parse(contenido);
                 JsonObject casas = element.getAsJsonObject();
                 
-                //itera en casa de la casa
-                for (String nombreCasa : casas.keySet()) {
-                    System.out.println(nombreCasa);
-                    JsonArray miembros = casas.getAsJsonArray(nombreCasa);
+                //itera en archivocasa del json
+                for (String archivoCasa : casas.keySet()) {
+                    System.out.println(archivoCasa);
+                    JsonArray miembros = casas.getAsJsonArray(archivoCasa);
                     
                     //itera en cada miembro del linaje
                     for (JsonElement miembro : miembros) {
-                        JsonObject miembroLinaje = miembro.getAsJsonObject();
+                        JsonObject linaje = miembro.getAsJsonObject();
 
-                        for (String nombreMiembro : miembroLinaje.keySet()) {
+                        for (String nombreMiembro : linaje.keySet()) {
                             System.out.println(nombreMiembro);
-                            JsonArray miembroAtributos = miembroLinaje.getAsJsonArray(nombreMiembro);
+                            JsonArray atributos = linaje.getAsJsonArray(nombreMiembro);
                             
-                            //itera cada miembro
-                            for (JsonElement miembroAtributo : miembroAtributos) {
-                                var suNombre = miembroAtributo.getAsJsonObject().get("Of his name");
+                            //itera cada atributos
+                            for (JsonElement miembroAtributo : atributos) {
+                                var Ofhisname = miembroAtributo.getAsJsonObject().get("Of his name");
                                 var bornTo = miembroAtributo.getAsJsonObject().get("Born to");
                                 var knownThroughoutAs = miembroAtributo.getAsJsonObject().get("Known throughout as");
                                 var heldTitle = miembroAtributo.getAsJsonObject().get("Held title");
