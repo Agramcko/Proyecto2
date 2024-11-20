@@ -4,10 +4,16 @@
  */
 package proyecto2;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.awt.Color;
 import java.awt.Image;
+import java.nio.file.Files;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 
 /**
@@ -18,18 +24,18 @@ public class Interfaz extends javax.swing.JFrame {
 
     private ImageIcon imagen;
     private Icon icono;
-  
+
     public Interfaz() {
         initComponents();
         inicio.setBackground(Color.white);
         blanco2.setVisible(false);  //Para que no se vea los botones del panel de atras
-        
+
         this.setLocationRelativeTo(this);
-        
+
         this.pintarImagen(this.Reyimg, "src/Img/rey.jpg");          //Para agregar las imagenes de la interfaz
         this.pintarImagen(this.herencia, "src/Img/herencia.gif");
         this.pintarImagen(this.arbol, "src/Img/arbol-de-familia.gif");
-        
+
     }
 
     /**
@@ -345,16 +351,16 @@ public class Interfaz extends javax.swing.JFrame {
         blanco1.setVisible(true);   //Para que se muestre el panel que selecciones
         blanco2.setVisible(false);
         inicio.setBackground(Color.white);
-        serbtn.setBackground(new Color(204,204,204));
-        
+        serbtn.setBackground(new Color(204, 204, 204));
+
     }//GEN-LAST:event_inicioMouseClicked
 
     private void serbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serbtnMouseClicked
         blanco2.setVisible(true);   //Para que se muestre el panel que selecciones
         blanco1.setVisible(false);
         serbtn.setBackground(Color.white);
-        inicio.setBackground(new Color(204,204,204));
-        
+        inicio.setBackground(new Color(204, 204, 204));
+
     }//GEN-LAST:event_serbtnMouseClicked
 
     private void txtsalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtsalidaMouseClicked
@@ -367,7 +373,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_txtsalidaMouseEntered
 
     private void txtsalidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtsalidaMouseExited
-        btnsalida.setBackground(new Color(204,204,204));  // Devuelve el color del background
+        btnsalida.setBackground(new Color(204, 204, 204));  // Devuelve el color del background
         txtsalida.setForeground(Color.black);
     }//GEN-LAST:event_txtsalidaMouseExited
 
@@ -376,7 +382,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarNomActionPerformed
 
     private void CargarTreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CargarTreeMouseEntered
-        CargarTree.setBackground(new Color(153,204,255));
+        CargarTree.setBackground(new Color(153, 204, 255));
         CargarTree.setForeground(Color.black);
     }//GEN-LAST:event_CargarTreeMouseEntered
 
@@ -386,7 +392,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_CargarTreeMouseExited
 
     private void VerRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerRegistroMouseEntered
-        VerRegistro.setBackground(new Color(153,204,255));
+        VerRegistro.setBackground(new Color(153, 204, 255));
         VerRegistro.setForeground(Color.black);
     }//GEN-LAST:event_VerRegistroMouseEntered
 
@@ -396,7 +402,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_VerRegistroMouseExited
 
     private void BuscarNomMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarNomMouseEntered
-        BuscarNom.setBackground(new Color(153,204,255));
+        BuscarNom.setBackground(new Color(153, 204, 255));
         BuscarNom.setForeground(Color.black);
     }//GEN-LAST:event_BuscarNomMouseEntered
 
@@ -406,7 +412,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarNomMouseExited
 
     private void MostrarAntepMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MostrarAntepMouseEntered
-        MostrarAntep.setBackground(new Color(153,204,255));
+        MostrarAntep.setBackground(new Color(153, 204, 255));
         MostrarAntep.setForeground(Color.black);
     }//GEN-LAST:event_MostrarAntepMouseEntered
 
@@ -416,7 +422,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarAntepMouseExited
 
     private void BuscarTituloMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarTituloMouseEntered
-        BuscarTitulo.setBackground(new Color(153,204,255));
+        BuscarTitulo.setBackground(new Color(153, 204, 255));
         BuscarTitulo.setForeground(Color.black);
     }//GEN-LAST:event_BuscarTituloMouseEntered
 
@@ -426,7 +432,55 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarTituloMouseExited
 
     private void CargarTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTreeActionPerformed
-        // TODO add your handling code here:
+        var chooser = new JFileChooser(); //para seleccionar el archivo
+        chooser.showOpenDialog(null);
+
+        //recibe el archivo
+        var file = chooser.getSelectedFile();
+        if (file != null) {
+            try {
+                var nombre = file.getName();
+                var contenido = new String(Files.readAllBytes(file.toPath())); //lee el archivo
+
+                JsonParser parser = new JsonParser();
+                JsonElement element = parser.parse(contenido);
+                JsonObject casas = element.getAsJsonObject();
+                
+                //itera en casa de la casa
+                for (String nombreCasa : casas.keySet()) {
+                    System.out.println(nombreCasa);
+                    JsonArray miembros = casas.getAsJsonArray(nombreCasa);
+                    
+                    //itera en cada miembro del linaje
+                    for (JsonElement miembro : miembros) {
+                        JsonObject miembroLinaje = miembro.getAsJsonObject();
+
+                        for (String nombreMiembro : miembroLinaje.keySet()) {
+                            System.out.println(nombreMiembro);
+                            JsonArray miembroAtributos = miembroLinaje.getAsJsonArray(nombreMiembro);
+                            
+                            //itera cada miembro
+                            for (JsonElement miembroAtributo : miembroAtributos) {
+                                var suNombre = miembroAtributo.getAsJsonObject().get("Of his name");
+                                var bornTo = miembroAtributo.getAsJsonObject().get("Born to");
+                                var knownThroughoutAs = miembroAtributo.getAsJsonObject().get("Known throughout as");
+                                var heldTitle = miembroAtributo.getAsJsonObject().get("Held title");
+                                var wedTo = miembroAtributo.getAsJsonObject().get("Wed to");
+                                var ofEyes = miembroAtributo.getAsJsonObject().get("Of eyes");
+                                var ofhair = miembroAtributo.getAsJsonObject().get("Of hair");
+                                var notes = miembroAtributo.getAsJsonObject().get("Notes");
+                                var fate = miembroAtributo.getAsJsonObject().get("Fate");
+                                System.out.println(miembroAtributo);
+                                
+                                
+                            }
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
     }//GEN-LAST:event_CargarTreeActionPerformed
 
     /**
@@ -463,7 +517,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private void pintarImagen(JLabel lb1, String ruta) {
         this.imagen = new ImageIcon(ruta);
         this.icono = new ImageIcon(
