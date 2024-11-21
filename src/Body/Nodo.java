@@ -14,6 +14,8 @@ public class Nodo {
     private String haircolor;
     private String notes;
     private String fate;
+    
+    
 
     public Nodo getF() {
         return f;
@@ -87,10 +89,17 @@ public class Nodo {
         this.m = m;
     }
 
-    public Nodo(String element, int key) {
+    public Nodo(String element, int key, String apodo, String eyescolor, String haircolor, String title, String wife, String notes, String fate ) {
         this.element = element;
         this.key = key;
         this.sons = new Nodo[0];
+        this.apodo = apodo;
+        this.eyescolor = eyescolor;
+        this.haircolor = haircolor;
+        this.title = title;
+        this.wife = wife;
+        this.notes = notes;
+        this.fate = fate;
     }
 
     public Object getElement() {

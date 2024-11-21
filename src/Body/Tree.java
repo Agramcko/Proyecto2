@@ -30,8 +30,9 @@ public class Tree {
         return getRoot() == null;
     }
 
-    public Nodo insert(String element, Nodo pointer, Nodo padre, Nodo madre) {
-        Nodo nodo = new Nodo(element, getKeyCounter());
+    public Nodo insert(String element, Nodo pointer, Nodo padre, Nodo madre, String apodo, String eyescolor, String haircolor, String title, String wife, String notes, String fate) {
+        Nodo nodo = new Nodo(element, getKeyCounter(),apodo, eyescolor, haircolor, title, wife, notes, fate);
+        
 
         if (isEmpty()) {
             setRoot(nodo);
@@ -107,6 +108,41 @@ public class Tree {
         for (Nodo son : node.getSons()) {
             descendientes(son);
         }
+    }
+        public Arbolvisual descendientesvisual(Nodo node, Arbolvisual arbolvisual) {
+        if (node == null) {
+            return arbolvisual;
+        }
+        System.out.println("descendiente: " + node.getElement());
+        if (!arbolvisual.Nodoexiste((String) node.getElement())){
+         arbolvisual.AgregarNodo((String)node.getElement());
+         arbolvisual.insertarNodo((String) node.getElement());
+        }
+        //arbolvisual.AgregarNodo((String)node.getElement());
+
+        for (Nodo son : node.getSons()) {
+            arbolvisual = descendientesvisual(son, arbolvisual);
+        }
+        return arbolvisual;
+    }
+        
+        public Arbolvisual crearconexiondescientes(Nodo node, Arbolvisual arbolvisual) {
+        if (node == null) {
+            return arbolvisual;
+        }
+        System.out.println("descendiente: " + node.getElement());
+        
+        //arbolvisual.AgregarNodo((String)node.getElement());
+
+        for (Nodo son : node.getSons()) {
+            if (!arbolvisual.Aristaexiste((String) node.getElement(),(String) son.getElement())){
+         arbolvisual.AgregarArista((String)node.getElement(), (String) son.getElement());
+         arbolvisual.insertarAristas((String) node.getElement(), (String) son.getElement());
+        }
+            arbolvisual = crearconexiondescientes(son, arbolvisual);
+         
+        }
+        return arbolvisual;
     }
 
     public void ancestros(Nodo node) {
