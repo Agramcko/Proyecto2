@@ -5,6 +5,11 @@
  */
 package Body;
 
+/**
+ *
+ * @author adria
+ */
+
 public class HashTable {
 
     static int hashTableSize = 5;

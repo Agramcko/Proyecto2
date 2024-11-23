@@ -67,7 +67,7 @@
               <Component id="inicio" alignment="1" pref="48" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="genealogico" pref="30" max="32767" attributes="0"/>
+                  <Component id="genealogico" pref="37" max="32767" attributes="0"/>
                   <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
               </Group>
               <Component id="btnsalida" alignment="0" pref="48" max="32767" attributes="0"/>
@@ -261,11 +261,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="Reyimg">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\gramc\Downloads\rey2.jpg"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="arbol">
             </Component>

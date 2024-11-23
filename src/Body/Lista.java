@@ -4,6 +4,11 @@
  */
 package Body;
 
+/**
+ *
+ * @author adria
+ */
+
 class Lista {
 
     public NodoHT head;
@@ -38,4 +43,5 @@ class Lista {
         }
         return nodo;
     }
+
 }

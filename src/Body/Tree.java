@@ -1,5 +1,10 @@
 package Body;
 
+/**
+ *
+ * @author adria
+ */
+
 public class Tree {
 
     private Nodo root;
@@ -68,13 +73,13 @@ public class Tree {
         }
     }
 
-    public HashTable saveHashTable(Nodo root, HashTable ht) {
+    public HashTable GuardarHT(Nodo root, HashTable ht) {
         if (isEmpty()) {
             return ht;
         } else {
             for (Nodo son : root.getSons()) {
                 ht.insertar((String) son.getElement(), son);
-                ht = saveHashTable(son, ht);
+                ht = GuardarHT(son, ht);
             }
         }
 
@@ -155,4 +160,38 @@ public class Tree {
         ancestros(node.getF());
         ancestros(node.getM());
     }
+        public Arbolvisual ancestrovisual(Nodo node, Arbolvisual arbolvisual) {
+        if (node == null) {
+            return arbolvisual;
+        }
+        System.out.println("Ancestro: " + node.getElement());
+        if (!arbolvisual.Nodoexiste((String) node.getElement())){
+         arbolvisual.AgregarNodo((String)node.getElement());
+         arbolvisual.insertarNodo((String) node.getElement());
+        }
+            ancestrovisual(node.getM( ), arbolvisual);
+            ancestrovisual(node.getF(), arbolvisual);
+        return arbolvisual; 
+        }
+        public Arbolvisual ancestroscrearconexion(Nodo node,  Arbolvisual arbolvisual) {
+            if (node == null) {
+                return arbolvisual;
+            }
+            if (node.getF() != null && !arbolvisual.Aristaexiste((String) node.getElement(),(String) node.getF().getElement())){
+         arbolvisual.AgregarArista((String)node.getElement(), (String) node.getF().getElement());
+         arbolvisual.insertarAristas((String) node.getElement(), (String) node.getF().getElement());
+            }
+         
+        
+            if (node.getM() != null &&!arbolvisual.Aristaexiste((String) node.getElement(),(String) node.getM().getElement())){
+         arbolvisual.AgregarArista((String)node.getElement(), (String) node.getM().getElement());
+         arbolvisual.insertarAristas((String) node.getElement(), (String) node.getM().getElement());
+            }
+        
+            arbolvisual = ancestroscrearconexion(node.getF(), arbolvisual);
+            arbolvisual = ancestroscrearconexion(node.getM(), arbolvisual);
+            
+            return arbolvisual;
+        }
+
 }

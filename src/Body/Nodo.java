@@ -1,5 +1,10 @@
 package Body;
 
+/**
+ *
+ * @author adria
+ */
+
 public class Nodo {
 
     private String element;

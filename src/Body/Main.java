@@ -1,6 +1,9 @@
 package Body;
 
-
+/**
+ *
+ * @author adria
+ */
 
 public class Main {
 
@@ -27,7 +30,7 @@ public class Main {
 
         /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
         HashTable ht = new HashTable();
-        ht = tree.saveHashTable(tree.getRoot(), ht);
+        ht = tree.GuardarHT(tree.getRoot(), ht);
         ht.insertar((String) tree.getRoot().getElement(), tree.getRoot());
         ht.mostrarHashTable();
 
@@ -48,6 +51,8 @@ public class Main {
         Arbolvisual arbolvisual = new Arbolvisual();
         arbolvisual = tree.descendientesvisual(nodoPruebaPunt3B.pointerArbol, arbolvisual);
         arbolvisual = tree.crearconexiondescientes(nodoPruebaPunt3B.pointerArbol, arbolvisual);
+        //arbolvisual = tree.ancestrovisual(nodoPruebaPunto4.pointerArbol, arbolvisual);
+        //arbolvisual = tree.ancestroscrearconexion(nodoPruebaPunto4.pointerArbol, arbolvisual);
 
         System.setProperty("org.graphstream.ui", "swing");
         

@@ -1,5 +1,10 @@
 package Body;
 
+/**
+ *
+ * @author adria
+ */
+
 public class NodoHT {
 
     public String key;

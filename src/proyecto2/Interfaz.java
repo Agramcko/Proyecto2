@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package proyecto2;
+import Body.Arbolvisual;
+import Body.HashTable;
+import Body.Tree;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
