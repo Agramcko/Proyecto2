@@ -15,6 +15,10 @@ import org.graphstream.graph.implementations.*;
 
 
 public class Arbolvisual {
+    
+        /**
+     * El grafo que representa el árbol genealógico.
+     */
     public Graph graph;
     
     public String[]array = new String[0];
@@ -24,18 +28,14 @@ public class Arbolvisual {
     public Arbolvisual(){
         graph = new SingleGraph("Arbol Genealogico");
     }
+//Agrega un nodo al grafo
     public void AgregarNodo (String Nodo){
         graph.addNode(Nodo);
-        graph.getNode(Nodo).setAttribute("ui.label", Nodo);
-        
-        
+        graph.getNode(Nodo).setAttribute("ui.label", Nodo);        
     }
- 
-    public void AgregarArista(String Nodo1, String Nodo2){
-  
-        graph.addEdge(Nodo1 + Nodo2, Nodo1, Nodo2, false);
-        
-        
+ // Agrega la conexion entre dos nodos en el grafo.
+    public void AgregarArista(String Nodo1, String Nodo2){  
+        graph.addEdge(Nodo1 + Nodo2, Nodo1, Nodo2, false);    
     }
    
 
