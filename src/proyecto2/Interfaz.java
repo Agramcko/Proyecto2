@@ -516,6 +516,9 @@ public class Interfaz extends javax.swing.JFrame {
                 for (String archivoCasa : casas.keySet()) {
                     System.out.println(archivoCasa);
                     JsonArray miembros = casas.getAsJsonArray(archivoCasa);
+                    
+                    Arbolvisual arbol = new Arbolvisual();
+                    arbol.display();
 
                     //itera cada miembro del archivocasa
                     for (JsonElement miembro : miembros) {
