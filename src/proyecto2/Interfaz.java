@@ -396,21 +396,25 @@ public class Interfaz extends javax.swing.JFrame {
         Tree tree = new Tree();
         Nodo padre = null, madre = null;
         
-        tree.insert("Jon Snow", null, padre, madre, "Rey en el Norte", "Invernalia", "El Bastardo del Norte", "Marrones", "Negros", "Heredero al trono", "Daenerys", "Recupero su hogar", "Murio a manos de sus camaradas");
+        tree.insert("Aegon Targaryen", null, padre, madre, "First", "[Unknown]", "Aegon the Conqueror", "Purple", "Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", "Founder of House Targaryen", " ");
         
-        padre = tree.encontrarNodoPorValor("Jon Snow", tree.getRoot());
+        padre = tree.encontrarNodoPorValor("Aegon Targaryen", tree.getRoot());
         madre = null;
 
-        tree.insert("Carlos", tree.getRoot(), padre, madre, "Carlitos", "Invernalia",  "", "verdes","Marron", "Gordito", "Carla", "Guardian", "Loco");
-        tree.insert("Luis", tree.getRoot(), padre, madre, "Luisen", "Invernalia",  "", "gris", "rubio", "Gordito", "Luisa", "Salvador", "Amante");
-        tree.insert("Pedro", tree.getRoot(), padre, madre, "Pedrito", "Invernalia",  "", "negros", "castaño", "Gordito", "Pietra", "Angel", "Salvaje");
+        tree.insert("Aenys Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "King Abomination", "Purple","Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", " ", "Died fleeing the Faith Militant Uprisin");
+        tree.insert("Maegor Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "", "Purple", "Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", "The Black Brides", "Rumored to be cursed to have no children", " ");
+        tree.insert("Baelon  Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "", "Purple", "Silver", "Lord of Dragonstone", " ", "Claim to being Aegon's heir, doubtful", " ");
 
 
-        padre = tree.encontrarNodoPorValor("Carlos", tree.getRoot());
-        madre = tree.encontrarNodoPorValor("Pedro", tree.getRoot());
+        padre = tree.encontrarNodoPorValor("Aenys Targaryen", tree.getRoot());
+        madre = null;
         
-        tree.insert("Isabel", tree.getRoot(), padre, madre, "Isa", "Invernalia",  "","azul", "rubia", "Gordita", "Miguel", "Celosa", "Toxica");
-        
+        Nodo padre1 = tree.insert("Jaehaerys Targaryen", tree.getRoot(), padre, madre, "First", "Aenys Targaryen, First of his name",  "The Old King", "Purple","Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", "Four additional children that died young including Daenerys Targaryen, First of her name ", " ");
+        Nodo padre2 = tree.insert("Viserys Targaryen", tree.getRoot(), padre, madre, "First", "Aenys Targaryen, First of his name",  "", "Purple", "Silver", " ", " ", "Not traditionally included in the numberings", " ");
+
+        tree.insert("Aego Targaryen", padre1, padre, madre, "Second", "Viserys Targaryen, First of his name",  " ", "Purple","Silver", " ", " ", " ", " ");
+        tree.insert("Baelon  Targaryen", padre2, padre, madre, "Second", "Jaehaerys Targaryen",  " ", "Purple","Silver", "Hand of the King", " ", "His name would be forgotten by the time of the War of the Five Kings; but the manner of his death, would not ", "Died of a burst belly");
+              
         /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
         HashTable ht = new HashTable();
         ht = tree.GuardarHT(tree.getRoot(), ht);
@@ -418,19 +422,15 @@ public class Interfaz extends javax.swing.JFrame {
         ht.mostrarHashTable();
 
         /*PUNTO 3.A*/
-        String[] usuariosEncontrados = ht.buscarPorNombre("JOn Snow");
+        String[] usuariosEncontrados = ht.buscarPorNombre("Aegon Targaryen");
         for (String usuario : usuariosEncontrados) {
             System.out.println("Usuario encontrado: " + usuario);
         }
 
         /*PUNTO 3.B*/
-        NodoHT nodoPruebaPunt3B = ht.accederAlHashTable("Jon Snow");
+        NodoHT nodoPruebaPunt3B = ht.accederAlHashTable("Aegon Targaryen");
         tree.descendientes(nodoPruebaPunt3B.pointerArbol);
 
-        /*PUNTO 4*/
-        NodoHT nodoPruebaPunto4 = ht.accederAlHashTable("Isabel");
-        tree.ancestros(nodoPruebaPunto4.pointerArbol);
-        
         Arbolvisual arbolvisual = new Arbolvisual();
 
         arbolvisual = tree.descendientesvisual(nodoPruebaPunt3B.pointerArbol, arbolvisual);
@@ -612,28 +612,32 @@ public class Interfaz extends javax.swing.JFrame {
         Tree tree = new Tree();
         Nodo padre = null, madre = null;
         
-        tree.insert("Jon Snow", null, padre, madre, "Rey en el Norte", "Invernalia", "El Bastardo del Norte", "Marrones", "Negros", "Heredero al trono", "Daenerys", "Recupero su hogar", "Murio a manos de sus camaradas");
+        tree.insert("Aegon Targaryen", null, padre, madre, "First", "[Unknown]", "Aegon the Conqueror", "Purple", "Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", "Founder of House Targaryen", " ");
         
-        padre = tree.encontrarNodoPorValor("Jon Snow", tree.getRoot());
+        padre = tree.encontrarNodoPorValor("Aegon Targaryen", tree.getRoot());
         madre = null;
 
-        tree.insert("Carlos", tree.getRoot(), padre, madre, "Carlitos", "Invernalia",  "", "verdes","Marron", "Gordito", "Carla", "Guardian", "Loco");
-        tree.insert("Luis", tree.getRoot(), padre, madre, "Luisen", "Invernalia",  "", "gris", "rubio", "Gordito", "Luisa", "Salvador", "Amante");
-        tree.insert("Pedro", tree.getRoot(), padre, madre, "Pedrito", "Invernalia",  "", "negros", "castaño", "Gordito", "Pietra", "Angel", "Salvaje");
+        tree.insert("Aenys Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "King Abomination", "Purple","Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", " ", "Died fleeing the Faith Militant Uprisin");
+        tree.insert("Maegor Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "", "Purple", "Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", "The Black Brides", "Rumored to be cursed to have no children", " ");
+        tree.insert("Baelon  Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "", "Purple", "Silver", "Lord of Dragonstone", " ", "Claim to being Aegon's heir, doubtful", " ");
 
 
-        padre = tree.encontrarNodoPorValor("Carlos", tree.getRoot());
-        madre = tree.encontrarNodoPorValor("Pedro", tree.getRoot());
+        padre = tree.encontrarNodoPorValor("Aenys Targaryen", tree.getRoot());
+        madre = null;
         
-        tree.insert("Isabel", tree.getRoot(), padre, madre, "Isa", "Invernalia",  "","azul", "rubia", "Gordita", "Miguel", "Celosa", "Toxica");
-        
+        Nodo padre1 = tree.insert("Jaehaerys Targaryen", tree.getRoot(), padre, madre, "First", "Aenys Targaryen, First of his name",  "The Old King", "Purple","Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", "Four additional children that died young including Daenerys Targaryen, First of her name ", " ");
+        Nodo padre2 = tree.insert("Viserys Targaryen", tree.getRoot(), padre, madre, "First", "Aenys Targaryen, First of his name",  "", "Purple", "Silver", " ", " ", "Not traditionally included in the numberings", " ");
+
+        tree.insert("Aego Targaryen", padre1, padre, madre, "Second", "Viserys Targaryen, First of his name",  " ", "Purple","Silver", " ", " ", " ", " ");
+        tree.insert("Baelon  Targaryen", padre2, padre, madre, "Second", "Jaehaerys Targaryen",  " ", "Purple","Silver", "Hand of the King", " ", "His name would be forgotten by the time of the War of the Five Kings; but the manner of his death, would not ", "Died of a burst belly");
+              
         /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
         HashTable ht = new HashTable();
         ht = tree.GuardarHT(tree.getRoot(), ht);
         ht.insertar((String) tree.getRoot().getElement(), tree.getRoot());
         ht.mostrarHashTable();
 
-        NodoHT nodoPruebaPunto4 = ht.accederAlHashTable("Isabel");
+        NodoHT nodoPruebaPunto4 = ht.accederAlHashTable("Aego Targaryen");
         tree.ancestros(nodoPruebaPunto4.pointerArbol);
         
         Arbolvisual arbolvisual = new Arbolvisual();
@@ -649,35 +653,36 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarAntepActionPerformed
 
     private void VerRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerRegistroActionPerformed
-                Tree tree = new Tree();
+        Tree tree = new Tree();
         Nodo padre = null, madre = null;
         
-        tree.insert("Jon Snow", null, padre, madre, "Rey en el Norte", "Invernalia", "El Bastardo del Norte", "Marrones", "Negros", "Heredero al trono", "Daenerys", "Recupero su hogar", "Murio a manos de sus camaradas");
+        tree.insert("Aegon Targaryen", null, padre, madre, "First", "[Unknown]", "Aegon the Conqueror", "Purple", "Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", "Founder of House Targaryen", " ");
         
-        padre = tree.encontrarNodoPorValor("Jon Snow", tree.getRoot());
+        padre = tree.encontrarNodoPorValor("Aegon Targaryen", tree.getRoot());
         madre = null;
 
-        tree.insert("Carlos", tree.getRoot(), padre, madre, "Carlitos", "Invernalia",  "", "verdes","Marron", "Gordito", "Carla", "Guardian", "Loco");
-        tree.insert("Luis", tree.getRoot(), padre, madre, "Luisen", "Invernalia",  "", "gris", "rubio", "Gordito", "Luisa", "Salvador", "Amante");
-        tree.insert("Pedro", tree.getRoot(), padre, madre, "Pedrito", "Invernalia",  "", "negros", "castaño", "Gordito", "Pietra", "Angel", "Salvaje");
+        tree.insert("Aenys Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "King Abomination", "Purple","Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", " ", "Died fleeing the Faith Militant Uprisin");
+        tree.insert("Maegor Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "", "Purple", "Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", "The Black Brides", "Rumored to be cursed to have no children", " ");
+        tree.insert("Baelon  Targaryen", tree.getRoot(), padre, madre, "First", "Aegon the Conqueror",  "", "Purple", "Silver", "Lord of Dragonstone", " ", "Claim to being Aegon's heir, doubtful", " ");
 
 
-        padre = tree.encontrarNodoPorValor("Carlos", tree.getRoot());
-        madre = tree.encontrarNodoPorValor("Pedro", tree.getRoot());
+        padre = tree.encontrarNodoPorValor("Aenys Targaryen", tree.getRoot());
+        madre = null;
         
-        tree.insert("Isabel", tree.getRoot(), padre, madre, "Isa", "Invernalia",  "","azul", "rubia", "Gordita", "Miguel", "Celosa", "Toxica");
-        
+        Nodo padre1 = tree.insert("Jaehaerys Targaryen", tree.getRoot(), padre, madre, "First", "Aenys Targaryen, First of his name",  "The Old King", "Purple","Silver", "King of the Andals and the First Men, Lord of the Seven Kingdoms", " ", "Four additional children that died young including Daenerys Targaryen, First of her name ", " ");
+        Nodo padre2 = tree.insert("Viserys Targaryen", tree.getRoot(), padre, madre, "First", "Aenys Targaryen, First of his name",  "", "Purple", "Silver", " ", " ", "Not traditionally included in the numberings", " ");
+
+        tree.insert("Aego Targaryen", padre1, padre, madre, "Second", "Viserys Targaryen, First of his name",  " ", "Purple","Silver", " ", " ", " ", " ");
+        tree.insert("Aenys Targaryen", padre2, padre, madre, "Second", "Jaehaerys Targaryen",  " ", "Purple","Silver", "Hand of the King", " ", "His name would be forgotten by the time of the War of the Five Kings; but the manner of his death, would not ", "Died of a burst belly");
+              
         /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
         HashTable ht = new HashTable();
         ht = tree.GuardarHT(tree.getRoot(), ht);
         ht.insertar((String) tree.getRoot().getElement(), tree.getRoot());
         ht.mostrarHashTable();
         
-        NodoHT persona = ht.accederAlHashTable("Jon Snow");
-        
-
-        
-        
+        NodoHT persona = ht.accederAlHashTable("Aegon Targaryen");
+          
         JOptionPane.showMessageDialog(null, "Este es la informacion de la persona buscada: "  +   persona.pointerArbol.getElement()  +  "\n"+"Color de ojos es: " + persona.pointerArbol.getEyescolor() + "\n"+ "Color de pelo: " + persona.pointerArbol.getHaircolor() + "\n"+ "Apodo: " + persona.pointerArbol.getApodo() + "\n"+ "Bornto: " + persona.pointerArbol.getBornto()+ "\n"+"Conocido: " + persona.pointerArbol.getConocido()+ "\n"+ "Padre: " +persona.pointerArbol.getF()+ "\n"+"Madre: "+persona.pointerArbol.getM()+ "\n"+"Esposa: " + persona.pointerArbol.getWife() + "\n"+ "Titulo: "+ persona.pointerArbol.getTitle() + "\n"+  "Notas: " + persona.pointerArbol.getNotes() + "\n"+ "Destino: "+ persona.pointerArbol.getFate());
         
         
