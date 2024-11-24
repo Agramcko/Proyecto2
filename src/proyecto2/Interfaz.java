@@ -678,7 +678,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         
         
-        JOptionPane.showMessageDialog(null, "Este es la informacion de la persona buscada:  "  +   persona.pointerArbol.getElement()  +  "Color de ojos es: " + persona.pointerArbol.getEyescolor() + "Color de pelo: " + persona.pointerArbol.getHaircolor() + "Apodo: " + persona.pointerArbol.getApodo() );
+        JOptionPane.showMessageDialog(null, "Este es la informacion de la persona buscada: "  +   persona.pointerArbol.getElement()  +  "\n"+"Color de ojos es: " + persona.pointerArbol.getEyescolor() + "\n"+ "Color de pelo: " + persona.pointerArbol.getHaircolor() + "\n"+ "Apodo: " + persona.pointerArbol.getApodo() + "\n"+ "Bornto: " + persona.pointerArbol.getBornto()+ "\n"+"Conocido: " + persona.pointerArbol.getConocido()+ "\n"+ "Padre: " +persona.pointerArbol.getF()+ "\n"+"Madre: "+persona.pointerArbol.getM()+ "\n"+"Esposa: " + persona.pointerArbol.getWife() + "\n"+ "Titulo: "+ persona.pointerArbol.getTitle() + "\n"+  "Notas: " + persona.pointerArbol.getNotes() + "\n"+ "Destino: "+ persona.pointerArbol.getFate());
         
         
         
