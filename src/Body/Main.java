@@ -12,20 +12,20 @@ public class Main {
         Tree tree = new Tree();
         Nodo padre = null, madre = null;
 
-        tree.insert("Jon Snow", null, padre, madre, "Rey en el NOrte", "Marrones", "Negro", "Lord de Invernalia", "Daenerys", "Verdadero heredero al trono de hierro", "murio a manos de sus compañeros");
+        tree.insert("Jon Snow", null, padre, madre, "Rey en el NOrte", "Invernalia", "Lobo Blanco ", "Marrones", "Negro", "Lord de Invernalia", "Daenerys", "Verdadero heredero al trono de hierro", "murio a manos de sus compañeros");
 
         padre = tree.encontrarNodoPorValor("Jon Snow", tree.getRoot());
         madre = null;
 
-        tree.insert("Carlos", tree.getRoot(), padre, madre, "Carlitos", "verdes","Marron", "Gordito", "Carla", "Guardian", "Loco");
-        tree.insert("Luis", tree.getRoot(), padre, madre, "Luisen", "gris", "rubio", "Gordito", "Luisa", "Salvador", "Amante");
-        tree.insert("Pedro", tree.getRoot(), padre, madre, "Pedrito", "negros", "castaño", "Gordito", "Pietra", "Angel", "Salvaje");
+        tree.insert("Carlos", tree.getRoot(), padre, madre, "Carlitos", "Invernalia",  "", "verdes","Marron", "Gordito", "Carla", "Guardian", "Loco");
+        tree.insert("Luis", tree.getRoot(), padre, madre, "Luisen", "Invernalia",  "", "gris", "rubio", "Gordito", "Luisa", "Salvador", "Amante");
+        tree.insert("Pedro", tree.getRoot(), padre, madre, "Pedrito", "Invernalia",  "", "negros", "castaño", "Gordito", "Pietra", "Angel", "Salvaje");
 
 
         padre = tree.encontrarNodoPorValor("Carlos", tree.getRoot());
         madre = tree.encontrarNodoPorValor("Pedro", tree.getRoot());
 
-        tree.insert("Isabel", tree.getRoot(), padre, madre, "Isa", "azul", "rubia", "Gordita", "Miguel", "Celosa", "Toxica");
+        tree.insert("Isabel", tree.getRoot(), padre, madre, "Isa", "Invernalia",  "","azul", "rubia", "Gordita", "Miguel", "Celosa", "Toxica");
         
 
         /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
@@ -51,8 +51,8 @@ public class Main {
         Arbolvisual arbolvisual = new Arbolvisual();
         arbolvisual = tree.descendientesvisual(nodoPruebaPunt3B.pointerArbol, arbolvisual);
         arbolvisual = tree.crearconexiondescientes(nodoPruebaPunt3B.pointerArbol, arbolvisual);
-        //arbolvisual = tree.ancestrovisual(nodoPruebaPunto4.pointerArbol, arbolvisual);
-        //arbolvisual = tree.ancestroscrearconexion(nodoPruebaPunto4.pointerArbol, arbolvisual);
+        arbolvisual = tree.ancestrovisual(nodoPruebaPunto4.pointerArbol, arbolvisual);
+        arbolvisual = tree.ancestroscrearconexion(nodoPruebaPunto4.pointerArbol, arbolvisual);
 
         System.setProperty("org.graphstream.ui", "swing");
         

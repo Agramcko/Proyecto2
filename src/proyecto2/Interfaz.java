@@ -5,7 +5,10 @@
 package proyecto2;
 import Body.Arbolvisual;
 import Body.HashTable;
+import Body.Nodo;
 import Body.Tree;
+import Body.Lista;
+import Body.NodoHT;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -18,6 +21,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -174,7 +178,7 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(inicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barramenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(genealogico, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addComponent(genealogico, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                 .addGap(5, 5, 5))
             .addComponent(btnsalida, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
@@ -182,8 +186,6 @@ public class Interfaz extends javax.swing.JFrame {
         fondo.setBackground(new java.awt.Color(255, 255, 255));
 
         blanco1.setBackground(new java.awt.Color(255, 255, 255));
-
-        Reyimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\gramc\\Downloads\\rey2.jpg")); // NOI18N
 
         javax.swing.GroupLayout blanco1Layout = new javax.swing.GroupLayout(blanco1);
         blanco1.setLayout(blanco1Layout);
@@ -240,6 +242,11 @@ public class Interfaz extends javax.swing.JFrame {
                 VerRegistroMouseExited(evt);
             }
         });
+        VerRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerRegistroActionPerformed(evt);
+            }
+        });
 
         BuscarNom.setBackground(new java.awt.Color(51, 51, 51));
         BuscarNom.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -269,6 +276,11 @@ public class Interfaz extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 MostrarAntepMouseExited(evt);
+            }
+        });
+        MostrarAntep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MostrarAntepActionPerformed(evt);
             }
         });
 
@@ -381,7 +393,54 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_txtsalidaMouseExited
 
     private void BuscarNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNomActionPerformed
-        // TODO add your handling code here:
+        Tree tree = new Tree();
+        Nodo padre = null, madre = null;
+        
+        tree.insert("Jon Snow", null, padre, madre, "Rey en el Norte", "Invernalia", "El Bastardo del Norte", "Marrones", "Negros", "Heredero al trono", "Daenerys", "Recupero su hogar", "Murio a manos de sus camaradas");
+        
+        padre = tree.encontrarNodoPorValor("Jon Snow", tree.getRoot());
+        madre = null;
+
+        tree.insert("Carlos", tree.getRoot(), padre, madre, "Carlitos", "Invernalia",  "", "verdes","Marron", "Gordito", "Carla", "Guardian", "Loco");
+        tree.insert("Luis", tree.getRoot(), padre, madre, "Luisen", "Invernalia",  "", "gris", "rubio", "Gordito", "Luisa", "Salvador", "Amante");
+        tree.insert("Pedro", tree.getRoot(), padre, madre, "Pedrito", "Invernalia",  "", "negros", "castaño", "Gordito", "Pietra", "Angel", "Salvaje");
+
+
+        padre = tree.encontrarNodoPorValor("Carlos", tree.getRoot());
+        madre = tree.encontrarNodoPorValor("Pedro", tree.getRoot());
+        
+        tree.insert("Isabel", tree.getRoot(), padre, madre, "Isa", "Invernalia",  "","azul", "rubia", "Gordita", "Miguel", "Celosa", "Toxica");
+        
+        /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
+        HashTable ht = new HashTable();
+        ht = tree.GuardarHT(tree.getRoot(), ht);
+        ht.insertar((String) tree.getRoot().getElement(), tree.getRoot());
+        ht.mostrarHashTable();
+
+        /*PUNTO 3.A*/
+        String[] usuariosEncontrados = ht.buscarPorNombre("JOn Snow");
+        for (String usuario : usuariosEncontrados) {
+            System.out.println("Usuario encontrado: " + usuario);
+        }
+
+        /*PUNTO 3.B*/
+        NodoHT nodoPruebaPunt3B = ht.accederAlHashTable("Jon Snow");
+        tree.descendientes(nodoPruebaPunt3B.pointerArbol);
+
+        /*PUNTO 4*/
+        NodoHT nodoPruebaPunto4 = ht.accederAlHashTable("Isabel");
+        tree.ancestros(nodoPruebaPunto4.pointerArbol);
+        
+        Arbolvisual arbolvisual = new Arbolvisual();
+
+        arbolvisual = tree.descendientesvisual(nodoPruebaPunt3B.pointerArbol, arbolvisual);
+        arbolvisual = tree.crearconexiondescientes(nodoPruebaPunt3B.pointerArbol, arbolvisual);
+
+        System.setProperty("org.graphstream.ui", "swing");
+        
+        arbolvisual.display();
+        
+  
     }//GEN-LAST:event_BuscarNomActionPerformed
 
     private void CargarTreeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CargarTreeMouseEntered
@@ -435,6 +494,10 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarTituloMouseExited
 
     private void CargarTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTreeActionPerformed
+        Tree tree = new Tree();
+        HashTable ht = new HashTable();
+        Nodo padre = null, madre = null;
+       
         var chooser = new JFileChooser(); //para seleccionar el archivo
         chooser.showOpenDialog(null);
 
@@ -475,6 +538,50 @@ public class Interfaz extends javax.swing.JFrame {
                                 var notes = atributo.getAsJsonObject().get("Notes");
                                 var fate = atributo.getAsJsonObject().get("Fate");
                                 System.out.println(atributo);
+                                
+                                String fate2 = "";
+                                if (fate != null){
+                                    fate2 = fate.toString();
+                                }                                
+                                String notes2 = "";
+                                if (notes != null){
+                                    notes2 = notes.toString();
+                                } 
+                                String wedTo2 = "";
+                                if (wedTo != null){
+                                    wedTo2 = wedTo.toString();
+                                }
+                                String name2 = "";
+                                if (Ofhisname != null){
+                                    name2 = Ofhisname.toString();
+                                }
+                                String bornTo2 = "";
+                                if (bornTo != null){
+                                    bornTo2 = bornTo.toString();
+                                    
+                                }   
+                                
+                                String knownThroughoutAs2 = "";
+                                if (knownThroughoutAs != null){
+                                    knownThroughoutAs2 = knownThroughoutAs.toString();
+                                }   
+                                
+                                
+                                String heldTitle2 = "";
+                                if (heldTitle != null){
+                                    heldTitle2 = heldTitle.toString();
+                                }      
+                                String ofEyes2 = "";
+                                if (ofEyes != null){
+                                    ofEyes2 = ofEyes.toString();
+                                }
+                                String ofhair2 = "";
+                                if (ofhair != null){
+                                    ofhair2 = ofhair.toString();
+                                }    
+                                
+                                
+                                tree.insert(nombreMiembro, null, padre, madre, name2, bornTo2, knownThroughoutAs2, ofEyes2, ofhair2, heldTitle2, wedTo2, notes2, fate2);
 
                                 // Verifica si el miembro tiene hijos y los muestra
                                 if (atributo.getAsJsonObject().has("Father to")) {
@@ -486,6 +593,7 @@ public class Interfaz extends javax.swing.JFrame {
                                     }
 
                                 }
+                                
 
                             }
                         }
@@ -496,6 +604,85 @@ public class Interfaz extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_CargarTreeActionPerformed
+
+    private void MostrarAntepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarAntepActionPerformed
+        Tree tree = new Tree();
+        Nodo padre = null, madre = null;
+        
+        tree.insert("Jon Snow", null, padre, madre, "Rey en el Norte", "Invernalia", "El Bastardo del Norte", "Marrones", "Negros", "Heredero al trono", "Daenerys", "Recupero su hogar", "Murio a manos de sus camaradas");
+        
+        padre = tree.encontrarNodoPorValor("Jon Snow", tree.getRoot());
+        madre = null;
+
+        tree.insert("Carlos", tree.getRoot(), padre, madre, "Carlitos", "Invernalia",  "", "verdes","Marron", "Gordito", "Carla", "Guardian", "Loco");
+        tree.insert("Luis", tree.getRoot(), padre, madre, "Luisen", "Invernalia",  "", "gris", "rubio", "Gordito", "Luisa", "Salvador", "Amante");
+        tree.insert("Pedro", tree.getRoot(), padre, madre, "Pedrito", "Invernalia",  "", "negros", "castaño", "Gordito", "Pietra", "Angel", "Salvaje");
+
+
+        padre = tree.encontrarNodoPorValor("Carlos", tree.getRoot());
+        madre = tree.encontrarNodoPorValor("Pedro", tree.getRoot());
+        
+        tree.insert("Isabel", tree.getRoot(), padre, madre, "Isa", "Invernalia",  "","azul", "rubia", "Gordita", "Miguel", "Celosa", "Toxica");
+        
+        /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
+        HashTable ht = new HashTable();
+        ht = tree.GuardarHT(tree.getRoot(), ht);
+        ht.insertar((String) tree.getRoot().getElement(), tree.getRoot());
+        ht.mostrarHashTable();
+
+        NodoHT nodoPruebaPunto4 = ht.accederAlHashTable("Isabel");
+        tree.ancestros(nodoPruebaPunto4.pointerArbol);
+        
+        Arbolvisual arbolvisual = new Arbolvisual();
+
+        arbolvisual = tree.ancestrovisual(nodoPruebaPunto4.pointerArbol, arbolvisual);
+        arbolvisual = tree.ancestroscrearconexion(nodoPruebaPunto4.pointerArbol, arbolvisual);
+
+        System.setProperty("org.graphstream.ui", "swing");
+        
+        arbolvisual.display();
+        
+        
+    }//GEN-LAST:event_MostrarAntepActionPerformed
+
+    private void VerRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerRegistroActionPerformed
+                Tree tree = new Tree();
+        Nodo padre = null, madre = null;
+        
+        tree.insert("Jon Snow", null, padre, madre, "Rey en el Norte", "Invernalia", "El Bastardo del Norte", "Marrones", "Negros", "Heredero al trono", "Daenerys", "Recupero su hogar", "Murio a manos de sus camaradas");
+        
+        padre = tree.encontrarNodoPorValor("Jon Snow", tree.getRoot());
+        madre = null;
+
+        tree.insert("Carlos", tree.getRoot(), padre, madre, "Carlitos", "Invernalia",  "", "verdes","Marron", "Gordito", "Carla", "Guardian", "Loco");
+        tree.insert("Luis", tree.getRoot(), padre, madre, "Luisen", "Invernalia",  "", "gris", "rubio", "Gordito", "Luisa", "Salvador", "Amante");
+        tree.insert("Pedro", tree.getRoot(), padre, madre, "Pedrito", "Invernalia",  "", "negros", "castaño", "Gordito", "Pietra", "Angel", "Salvaje");
+
+
+        padre = tree.encontrarNodoPorValor("Carlos", tree.getRoot());
+        madre = tree.encontrarNodoPorValor("Pedro", tree.getRoot());
+        
+        tree.insert("Isabel", tree.getRoot(), padre, madre, "Isa", "Invernalia",  "","azul", "rubia", "Gordita", "Miguel", "Celosa", "Toxica");
+        
+        /*FUNCIONES PARA INSERTAR EN EL HASH TABLE*/
+        HashTable ht = new HashTable();
+        ht = tree.GuardarHT(tree.getRoot(), ht);
+        ht.insertar((String) tree.getRoot().getElement(), tree.getRoot());
+        ht.mostrarHashTable();
+        
+        NodoHT persona = ht.accederAlHashTable("Jon Snow");
+        
+
+        
+        
+        JOptionPane.showMessageDialog(null, "Este es la informacion de la persona buscada:  "  +   persona.pointerArbol.getElement()  +  "Color de ojos es: " + persona.pointerArbol.getEyescolor() + "Color de pelo: " + persona.pointerArbol.getHaircolor() + "Apodo: " + persona.pointerArbol.getApodo() );
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_VerRegistroActionPerformed
 
     /**
      * @param args the command line arguments

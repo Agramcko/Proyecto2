@@ -35,8 +35,8 @@ public class Tree {
         return getRoot() == null;
     }
 
-    public Nodo insert(String element, Nodo pointer, Nodo padre, Nodo madre, String apodo, String eyescolor, String haircolor, String title, String wife, String notes, String fate) {
-        Nodo nodo = new Nodo(element, getKeyCounter(),apodo, eyescolor, haircolor, title, wife, notes, fate);
+    public Nodo insert(String element, Nodo pointer, Nodo padre, Nodo madre, String apodo, String bornto, String conocido, String eyescolor, String haircolor, String title, String wife, String notes, String fate) {
+        Nodo nodo = new Nodo(element, getKeyCounter(),apodo, bornto, conocido, eyescolor, haircolor, title, wife, notes, fate);
         
 
         if (isEmpty()) {

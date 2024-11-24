@@ -13,12 +13,30 @@ public class Nodo {
     private Nodo f;
     private Nodo m;
     private String apodo;
+    private String bornto;
+    private String conocido;
     private String title;
     private String wife;
     private String eyescolor;
     private String haircolor;
     private String notes;
     private String fate;
+
+    public String getBornto() {
+        return bornto;
+    }
+
+    public void setBornto(String bornto) {
+        this.bornto = bornto;
+    }
+
+    public String getConocido() {
+        return conocido;
+    }
+
+    public void setConocido(String conocido) {
+        this.conocido = conocido;
+    }
     
     
 
@@ -94,11 +112,13 @@ public class Nodo {
         this.m = m;
     }
 
-    public Nodo(String element, int key, String apodo, String eyescolor, String haircolor, String title, String wife, String notes, String fate ) {
+    public Nodo(String element, int key, String apodo, String bornto, String conocido, String eyescolor, String haircolor, String title, String wife, String notes, String fate ) {
         this.element = element;
         this.key = key;
         this.sons = new Nodo[0];
         this.apodo = apodo;
+        this.bornto = bornto;
+        this.conocido = conocido;
         this.eyescolor = eyescolor;
         this.haircolor = haircolor;
         this.title = title;
