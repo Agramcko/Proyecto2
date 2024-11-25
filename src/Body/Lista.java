@@ -6,7 +6,9 @@ package Body;
 
 /**
  *
- * @author adria
+ * @Alessandro Gramcko
+ * @Adrian Vegas
+ * @Jose Saggiomo
  */
 
 class Lista {

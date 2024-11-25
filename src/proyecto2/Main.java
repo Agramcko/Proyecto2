@@ -6,7 +6,9 @@ package proyecto2;
 
 /**
  *
- * @author gramc
+ * @Alessandro Gramcko
+ * @Adrian Vegas
+ * @Jose Saggiomo
  */
 public class Main {
 

@@ -2,7 +2,10 @@ package Body;
 
 /**
  *
- * @author adria
+ * @Alessandro Gramcko
+ * @Adrian Vegas
+ * @Jose Saggiomo
+ * 
  */
 
 public class Tree {

@@ -10,7 +10,9 @@ import org.graphstream.graph.implementations.*;
 
 /**
  *
- * @author adria
+ * @Alessandro Gramcko
+ * @Adrian Vegas
+ * @Jose Saggiomo
  */
 
 
