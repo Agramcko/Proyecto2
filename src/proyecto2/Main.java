@@ -14,7 +14,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
+        
+        Interfaz v1 = new Interfaz();
+        v1.setLocationRelativeTo(null);
+        v1.setVisible(true);
+        
     }
     
 }
